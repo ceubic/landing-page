@@ -6,19 +6,59 @@
     <link rel="stylesheet" href="styles/stylesheet.css">
     <title>Landing Page</title>
 </head>
-<body>
+<body onload="startTime()">
 
-<!-- sorry for the egregious amount of divs :( -->
+    <!-- sorry for the egregious amount of divs :( -->
 
-    <main id="window">
-        <div id="window-titlebar">
-            <p>About</p>
-            <button disabled>X</button><button disabled>□</button><button id="minimize">_</button>
+        <section id="window">
+            <div id="window-titlebar">
+                <p>About</p>
+                <button id="close">X</button><button disabled>□</button><button disabled>_</button>
+            </div>
+            <h1>hi im molly :]</h1>
+            <p>this</p>
+            <p>DIV</p>
+        </section>
+
+        <div id="desktop">
+            <a href="#" class="desktop-icon">
+                <img src="media/bin.png" alt="Bin icon">
+                <span>Recycle Bin</span>
+            </a>
+            <a href="#" class="desktop-icon">
+                <img src="media/info.png" alt="info icon">
+                <span>About</span>
+            </a>
+            <a href="#" class="desktop-icon">
+                <img src="media/globe.png" alt="globe icon">
+                <span>Country Site</span>
+            </a>
+            <a href="#" class="desktop-icon">
+                <img src="media/font.png" alt="fonts icon">
+                <span>Wordpress Site</span>
+            </a>
+            <a href="#" class="desktop-icon">
+                <img src="media/movies.png" alt="video folder icon">
+                <span>Movie Database</span>
+            </a>            
+            <a href="#" class="desktop-icon">
+                <img src="media/calculator.png" alt="calculator icon">
+                <span>Shopify</span>
+            </a>
+            <a href="#" class="desktop-icon">
+                <img src="media/game-controller.png" alt="game icon">
+                <span>Javascript Game</span>
+            </a>
+            <a href="#" class="desktop-icon">
+                <img src="media/player.png" alt="music player icon icon">
+                <span>Music Player</span>
+            </a>
+
+            <!-- Add more icons as needed -->
         </div>
-        <h1>hi im molly :]</h1>
-        <p>this</p>
-        <p>DIV</p>
-    </main>
+    
+        
+    <footer class="taskbar"><button>logo</button><div id="txt"></div></footer>
 
 <script src="scripts/script.js"></script> 
 </body>

@@ -1,11 +1,17 @@
 
+body {
+    background-image: url('../media/windows_xp_bliss-wide.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
 
 #window {
 
     position: absolute;
     top: 20%;
     left: 20%;
-    z-index: -1;
+    z-index: 10;
     background-color: #f1f1f1;
     width: 35rem;
     max-width: 30%;
@@ -28,4 +34,51 @@
 #window-titlebar button {
     display: flex;
     float: right;
+}
+
+.desktop-icon {
+    display: inline-block;
+    width: 80px; /* Width of icon */
+    text-align: center;
+    margin: 10px; /* Margin between icons */
+    text-decoration: none;
+    color: #000;
+}
+
+.desktop-icon img {
+    width: 48px; /* Size of the icon image */
+    height: 48px;
+    display: block;
+    margin: 0 auto 5px; /* Center image and add space below */
+}
+
+.desktop-icon span {
+    display: block;
+    font-size: 12px;
+}
+
+.taskbar {
+    width: 100%;
+    height: 2.5rem;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #2196F3;
+}
+
+.taskbar button {
+    margin-right: auto;
+}
+
+#clock {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    color: #000;
 }

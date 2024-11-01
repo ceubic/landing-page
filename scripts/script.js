@@ -43,3 +43,19 @@ function dragElement(elmnt) {
         document.onmousemove = null;
     }
 }
+
+//clock javascript via W3Schools --> https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock //
+
+function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    m = checkTime(m);
+    document.getElementById('txt').innerHTML =  h + ":" + m;
+    setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
