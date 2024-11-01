@@ -1,0 +1,31 @@
+
+
+#window {
+
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: -1;
+    background-color: #f1f1f1;
+    width: 35rem;
+    max-width: 30%;
+    border: 1px solid #d3d3d3;
+}
+
+#window-titlebar {
+    padding: 10px;
+    height: 1.5rem;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+}
+
+#window-titlebar p {
+    display: inline;
+}
+
+#window-titlebar button {
+    display: flex;
+    float: right;
+}
