@@ -3,43 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>Landing Page</title>
 </head>
 <body onload="startTime()">
 
     <!-- sorry for the egregious amount of divs :( -->
 
-        <section id="window">
-            <div id="window-titlebar">
-                <p>About</p>
-                <button id="close">X</button><button disabled>□</button><button disabled>_</button>
+    <section id="window" class="draggable">
+        <div id="windowHeader"><p>About Me</p><button id="closeBtn">X</button><button disabled>☐</button><button disabled>_</button></div>
             </div>
+            <img src="#" alt="me pic">
             <h1>hi im molly :]</h1>
-            <p>this</p>
-            <p>DIV</p>
+            <p>INSRET INFO HEEERRRReEEEE
+                <br>
+            HERREEEEEE
+            </p>
         </section>
 
+        <section id="window2" class="draggable" style="display: none;">
+            <div id="windowHeader2"><p>Music Player</p><button id="closeBtn2">X</button><button disabled>☐</button><button disabled>_</button></div>
+            </div>
+            <div id="musicplayer">
+                <div><marquee scrollamount="4" class="songtitle" id="songTitle"></marquee></div>
+                <table class="controls">
+                <tr>
+                    <td><div class="prev-track" onclick="prevTrack()"><i class="fas fa-backward"></i></div></td>
+                    <td><div class="playpause-track" onclick="playpauseTrack()"><i class="fas fa-play" id="playPauseIcon"></i></div></td>
+                    <td><div class="next-track" onclick="nextTrack()"><i class="fas fa-forward"></i></div></td>
+                </tr>
+                </table>
+                <div class="seeking">
+                <div class="current-time">00:00</div>
+                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                <div class="total-duration">0:00</div>
+                </div>
+                <audio id="audioPlayer"></audio> 
+            </div>
+            </div>
+        </section>
+
+
+        <!--note: recreate icons in illustrator. the low res is killing me-->
         <div id="desktop">
             <a href="#" class="desktop-icon">
                 <img src="media/bin.png" alt="Bin icon">
                 <span>Recycle Bin</span>
             </a>
-            <a href="#" class="desktop-icon">
+            <a href="#" id="desktopIcon" class="desktop-icon">
                 <img src="media/info.png" alt="info icon">
-                <span>About</span>
+                <span>About Me</span>
             </a>
             <a href="#" class="desktop-icon">
                 <img src="media/globe.png" alt="globe icon">
                 <span>Country Site</span>
             </a>
             <a href="#" class="desktop-icon">
-                <img src="media/font.png" alt="fonts icon">
+                <img src="media/folder.png" alt="folder icon">
                 <span>Wordpress Site</span>
             </a>
             <a href="#" class="desktop-icon">
-                <img src="media/movies.png" alt="video folder icon">
-                <span>Movie Database</span>
+                <img src="media/moviemaker.png" alt="film icon">
+                <span>Movie DB</span>
             </a>            
             <a href="#" class="desktop-icon">
                 <img src="media/calculator.png" alt="calculator icon">
@@ -47,18 +74,21 @@
             </a>
             <a href="#" class="desktop-icon">
                 <img src="media/game-controller.png" alt="game icon">
-                <span>Javascript Game</span>
+                <span>JS Game</span>
             </a>
-            <a href="#" class="desktop-icon">
-                <img src="media/player.png" alt="music player icon icon">
+            <a href="#" id="desktopIcon2" class="desktop-icon">
+                <img src="media/player.png" alt="music player icon">
                 <span>Music Player</span>
             </a>
-
-            <!-- Add more icons as needed -->
+            <!--use light box workaround in third window?-->
+            <a href="#" class="desktop-icon">
+                <img src="media/imgfolder.png" alt="image folder icon">
+                <span>Gallery</span>
+            </a>
         </div>
     
-        
-    <footer class="taskbar"><button>logo</button><div id="txt"></div></footer>
+
+    <footer class="taskbar"><a href="#" class="logo"><img src="#" alt="logo"></a><div id="clock"></div></footer>
 
 <script src="scripts/script.js"></script> 
 </body>
