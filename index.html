@@ -12,8 +12,8 @@
 
     <!-- sorry for the egregious amount of divs :( -->
 
-    <section id="window" class="draggable">
-        <div id="windowHeader"><p>About Me</p><button id="closeBtn">X</button><button disabled>☐</button><button disabled>_</button></div>
+    <section id="windowInfo" class="draggable">
+        <div id="windowHeaderInfo" class="windowHeader"><p>About Me</p><button id="closeBtnInfo" class="closeBtn">X</button><button disabled>☐</button><button disabled>_</button></div>
             </div>
             <img src="#" alt="me pic">
             <h1>hi im molly :]</h1>
@@ -23,8 +23,8 @@
             </p>
         </section>
 
-        <section id="window2" class="draggable" style="display: none;">
-            <div id="windowHeader2"><p>Music Player</p><button id="closeBtn2">X</button><button disabled>☐</button><button disabled>_</button></div>
+        <section id="windowMusic" class="draggable" style="display: none;">
+            <div id="windowHeaderMusic" class="windowHeader"><p>Music Player</p><button class="closeBtn" id="closeBtnMusic">X</button><button disabled>☐</button><button disabled>_</button></div>
             </div>
             <div id="musicplayer">
                 <div><marquee scrollamount="4" class="songtitle" id="songTitle"></marquee></div>
@@ -45,14 +45,23 @@
             </div>
         </section>
 
+        <section id="windowContact" class="draggable" style="display: none;">
+            <div id="windowHeaderContact" class="windowHeader"><p>About Me</p><button class="closeBtn" id="closeBtnContact">X</button><button disabled>☐</button><button disabled>_</button></div>
+                </div>
+                <h1>hi im molly :]</h1>
+                <p>INSRET INFO HEEERRRReEEEE
+                    <br>
+                HERREEEEEE
+                </p>
+            </section>
 
-        <!--note: recreate icons in illustrator. the low res is killing me-->
-        <div id="desktop">
+
+        <nav id="desktop">
             <a href="#" class="desktop-icon">
                 <img src="media/bin.png" alt="Bin icon">
                 <span>Recycle Bin</span>
             </a>
-            <a href="#" id="desktopIcon" class="desktop-icon">
+            <a href="#" id="infoIcon" class="desktop-icon">
                 <img src="media/info.png" alt="info icon">
                 <span>About Me</span>
             </a>
@@ -76,19 +85,23 @@
                 <img src="media/game-controller.png" alt="game icon">
                 <span>JS Game</span>
             </a>
-            <a href="#" id="desktopIcon2" class="desktop-icon">
+            <a href="#" id="musicPlayerIcon" class="desktop-icon">
                 <img src="media/player.png" alt="music player icon">
                 <span>Music Player</span>
             </a>
             <!--use light box workaround in third window?-->
-            <a href="#" class="desktop-icon">
+            <a href="#" id="imageFolderIcon" class="desktop-icon">
                 <img src="media/imgfolder.png" alt="image folder icon">
                 <span>Gallery</span>
             </a>
-        </div>
-    
+                        <a href="#" id="phoneIcon" class="desktop-icon">
+                <img src="media/phone.png" alt="phone icon">
+                <span>Contact</span>
+            </a>
 
-    <footer class="taskbar"><a href="#" class="logo"><img src="#" alt="logo"></a><div id="clock"></div></footer>
+        </nav>
+    
+    <footer class="taskbar"><div id="clock"></div></footer>
 
 <script src="scripts/script.js"></script> 
 </body>

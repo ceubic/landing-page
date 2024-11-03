@@ -1,21 +1,19 @@
 
 //draggable windows javascript via W3Schools --> https://www.w3schools.com/howto/howto_js_draggable.asp //
 
-function makeElementDraggable(elmnt, headerId) {
+function makeElementDraggable(elmnt, headerId, closeBtnId) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     const header = document.getElementById(headerId);
+    const closeBtn = document.getElementById(closeBtnId);
 
     if (header) {
     header.onmousedown = dragMouseDown;
     }
 
-    if (closeBtn2) {
-        closeBtn2.addEventListener('click', function() {
+    if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
         elmnt.style.display = 'none';
-        if (elmnt.id === 'window2') {
-            audioPlayer.pause();
-        }
-        });
+    });
     }
 
     function dragMouseDown(e) {
@@ -38,6 +36,7 @@ function makeElementDraggable(elmnt, headerId) {
     let newLeft = elmnt.offsetLeft - pos1;
     let newTop = elmnt.offsetTop - pos2;
 
+    // Ensure the div stays within the viewport
     newLeft = Math.max(0, Math.min(newLeft, window.innerWidth - elmnt.offsetWidth));
     newTop = Math.max(0, Math.min(newTop, window.innerHeight - elmnt.offsetHeight - document.querySelector('.taskbar').offsetHeight));
 
@@ -51,79 +50,57 @@ function makeElementDraggable(elmnt, headerId) {
     }
 }
 
-  // Initialize dragging for both windows
-makeElementDraggable(document.getElementById('window'), 'windowHeader');
-makeElementDraggable(document.getElementById('window2'), 'windowHeader2');
+  // Apply to each window
+const windows = [
+    { id: 'windowInfo', headerId: 'windowHeaderInfo', closeBtnId: 'closeBtnInfo' },
+    { id: 'windowMusic', headerId: 'windowHeaderMusic', closeBtnId: 'closeBtnMusic' },
+    { id: 'windowGallery', headerId: 'windowHeaderGallery', closeBtnId: 'closeBtnGallery' },
+    { id: 'windowContact', headerId: 'windowHeaderContact', closeBtnId: 'closeBtnContact' }
+];
 
- // Close and open windows
-document.getElementById('closeBtn').addEventListener('click', function() {
-    document.getElementById('window').style.display = 'none';
-
+windows.forEach(win => {
+    makeElementDraggable(document.getElementById(win.id), win.headerId, win.closeBtnId);
 });
 
-document.getElementById('desktopIcon').addEventListener('click', function() {
-    document.getElementById('window').style.display = 'block';
+  // close windows
+    document.getElementById('infoIcon').addEventListener('click', function() {
+    document.getElementById('windowInfo').style.display = 'block';
 });
 
-document.getElementById('desktopIcon2').addEventListener('click', function() {
-    document.getElementById('window2').style.display = 'block';
+    document.getElementById('musicPlayerIcon').addEventListener('click', function() {
+    document.getElementById('windowMusic').style.display = 'block';
 });
 
-document.getElementById('closeBtn2').addEventListener('click', function() {
-    document.getElementById('window2').style.display = 'none';
+    document.getElementById('phoneIcon').addEventListener('click', function() {
+    document.getElementById('windowContact').style.display = 'block';
 });
 
-document.getElementById('desktopIcon').addEventListener('click', function() {
-    document.getElementById('window').style.display = 'block';
+    document.getElementById('imageFolderIcon').addEventListener('click', function() {
+    document.getElementById('windowGallery').style.display = 'block';
 });
 
-document.getElementById('desktopIcon2').addEventListener('click', function() {
-    document.getElementById('window2').style.display = 'block';
+
+ // close windows
+document.getElementById('closeBtnInfo').addEventListener('click', function() {
+    document.getElementById('windowInfo').style.display = 'none';
 });
 
-// :active and hover didnt wanna work in the css for the close button for some reason. who knows. this works so whatever 🤷‍♂️ //
-const closeBtnWindow = document.getElementById('closeBtnWindow');
-const closeBtnNewWindow = document.getElementById('closeBtnNewWindow');
-
-closeBtn.addEventListener('mousedown', function() {
-    this.style.background = 'rgb(105,34,15)';
-    this.style.background = 'linear-gradient(142deg, rgba(105,34,15,1) 0%, rgba(202,72,33,1) 20%)';
+document.getElementById('closeBtnMusic').addEventListener('click', function() {
+    document.getElementById('windowMusic').style.display = 'none';
 });
 
-closeBtn.addEventListener('mouseup', function() {
-    this.style.background = 'rgb(241,172,154)';
-    this.style.background = 'linear-gradient(142deg, rgba(241,172,154,1) 0%, rgba(232,68,11,1) 57%)';
+document.getElementById('closeBtnContact').addEventListener('click', function() {
+    document.getElementById('windowContact').style.display = 'none';
 });
 
-closeBtn.addEventListener('mouseover', function() {
-    this.style.background = 'rgb(255,174,165)';
-    this.style.background = 'linear-gradient(142deg, rgba(255,174,165,1) 0%, rgba(255,106,88,1) 57%)';
+document.getElementById('closeBtnGallery').addEventListener('click', function() {
+    document.getElementById('windowGallery').style.display = 'none';
 });
 
-closeBtn.addEventListener('mouseout', function() {
-    this.style.background = 'rgb(241,172,154)';
-    this.style.background = 'linear-gradient(142deg, rgba(241,172,154,1) 0%, rgba(232,68,11,1) 57%)';
-});
+//
 
-closeBtn2.addEventListener('mousedown', function() {
-    this.style.background = 'rgb(105,34,15)';
-    this.style.background = 'linear-gradient(142deg, rgba(105,34,15,1) 0%, rgba(202,72,33,1) 20%)';
-});
 
-closeBtn2.addEventListener('mouseup', function() {
-    this.style.background = 'rgb(241,172,154)';
-    this.style.background = 'linear-gradient(142deg, rgba(241,172,154,1) 0%, rgba(232,68,11,1) 57%)';
-});
 
-closeBtn2.addEventListener('mouseover', function() {
-    this.style.background = 'rgb(255,174,165)';
-    this.style.background = 'linear-gradient(142deg, rgba(255,174,165,1) 0%, rgba(255,106,88,1) 57%)';
-});
-
-closeBtn2.addEventListener('mouseout', function() {
-    this.style.background = 'rgb(241,172,154)';
-    this.style.background = 'linear-gradient(142deg, rgba(241,172,154,1) 0%, rgba(232,68,11,1) 57%)';
-});
 
 //clock javascript via W3Schools --> https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock //
 
@@ -141,7 +118,7 @@ function checkTime(i) {
     return i;
 }
 
-//music player via
+//music player via GeeksforGeeks --> https://www.geeksforgeeks.org/create-a-music-player-using-javascript/ 
 
 const audioPlayer = document.getElementById('audioPlayer');
 const playPauseIcon = document.getElementById('playPauseIcon');

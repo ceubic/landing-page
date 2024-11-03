@@ -7,10 +7,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
-#window {
+#windowInfo, #windowContact, #windowGallery {
     position: absolute;
     top:10%;
     left: 5%;
@@ -25,7 +24,7 @@ body {
     padding: 0 0 3px;
 }
 
-#window2 {
+#windowMusic {
     position: absolute;
     top:10%;
     left: 5%;
@@ -40,7 +39,7 @@ body {
     padding: 0 0 3px;
 }
 
-#windowHeader, #windowHeader2 {
+.windowHeader {
     padding: 10px;
     cursor: move;
     z-index: 10;
@@ -54,7 +53,7 @@ body {
     height: 1.8rem;
 }
 
-#windowHeader p, #windowHeader2 p {
+.windowHeader p {
     display: inline;
     font-size: 1rem;
     text-shadow: 1px 1px #0f1089;
@@ -63,7 +62,7 @@ body {
     margin-left: .2rem;
 }
 
-#windowHeader button, #windowHeader2 button {
+.windowHeader button {
     display: flex;
     float: right;
     cursor: default;
@@ -81,26 +80,35 @@ body {
     font-weight: 900;
 }
 
-#windowHeader button:hover, #windowHeader2 button:hover {
+.windowHeader .closeBtn {
+    background: linear-gradient(142deg, rgba(241,172,154,1) 0%, rgba(232,68,11,1) 57%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    padding: 0 0 0 4.5px;
+    border: 1.5px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.windowHeader button:hover {
     background: rgb(164,194,255);
     background: linear-gradient(142deg, rgba(164,194,255,1) 0%, rgba(69,135,255,1) 57%); 
 }
 
-#windowHeader button:active, #windowHeader2 button:active {
-    background: rgb(0,42,98);
+.windowHeader .closeBtn:hover, .windowHeader .closeBtn:focus {
+    background: linear-gradient(142deg, rgba(255,174,165,1) 0%, rgba(255,106,88,1) 57%);
+}
+
+.windowHeader button:active {
     background: linear-gradient(142deg, rgba(0,42,98,1) 0%, rgba(0,84,185,1) 20%); 
 }
 
-/* not sure if this is correct semantically, but when i remove the 'div' from these the styling breaks. why? who knows... */
-
-div #closeBtn, div #closeBtn2 {
-    padding: 0 0 0 4.5px;
-    background: rgb(241,172,154);
-    background: linear-gradient(142deg, rgba(241,172,154,1) 0%, rgba(232,68,11,1) 57%); 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 700;
+/*active pseudo class not working in firefox???? for some reason?????? FML */
+.windowHeader .closeBtn:active  {
+    background: linear-gradient(142deg, rgba(105,34,15,1) 0%, rgba(202,72,33,1) 20%) ;
 }
 
+/* not sure if this is correct semantically, but when i #windowHeader____ from these the styling breaks. why? who knows... */
 
 .desktop-icon {
     display: inline-block;
@@ -173,7 +181,6 @@ div #closeBtn, div #closeBtn2 {
 
 #musicplayer {
     width: 95%;
-
     margin: 0 auto; /* Center align */
     background-color: #ECE9D8;
     padding-top: 10px;
