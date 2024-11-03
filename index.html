@@ -3,105 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/stylesheet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>Landing Page</title>
 </head>
 <body onload="startTime()">
 
-    <!-- sorry for the egregious amount of divs :( -->
 
     <section id="windowInfo" class="draggable">
         <div id="windowHeaderInfo" class="windowHeader"><p>About Me</p><button id="closeBtnInfo" class="closeBtn">X</button><button disabled>☐</button><button disabled>_</button></div>
+            <div class="contents">
+                <img src="media/paisley.jpg" alt="a black and white cat with a bell collar">
+                <p>
+                Hey! I'm Molly (not pictured above), an aspiring Web Developer from West Coast Canada. <br> I'm a person of broad interests, but I especially love comics, animation, RPGs, and buying the occasional transformers figure. <br>
+                See ya around the net! :-D &#128075;
+                </p>
             </div>
-            <img src="#" alt="me pic">
-            <h1>hi im molly :]</h1>
-            <p>INSRET INFO HEEERRRReEEEE
-                <br>
-            HERREEEEEE
-            </p>
         </section>
 
         <section id="windowMusic" class="draggable" style="display: none;">
-            <div id="windowHeaderMusic" class="windowHeader"><p>Music Player</p><button class="closeBtn" id="closeBtnMusic">X</button><button disabled>☐</button><button disabled>_</button></div>
-            </div>
-            <div id="musicplayer">
-                <div><marquee scrollamount="4" class="songtitle" id="songTitle"></marquee></div>
-                <table class="controls">
-                <tr>
-                    <td><div class="prev-track" onclick="prevTrack()"><i class="fas fa-backward"></i></div></td>
-                    <td><div class="playpause-track" onclick="playpauseTrack()"><i class="fas fa-play" id="playPauseIcon"></i></div></td>
-                    <td><div class="next-track" onclick="nextTrack()"><i class="fas fa-forward"></i></div></td>
-                </tr>
-                </table>
-                <div class="seeking">
-                <div class="current-time">00:00</div>
-                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-                <div class="total-duration">0:00</div>
-                </div>
-                <audio id="audioPlayer"></audio> 
-            </div>
-            </div>
+            <div id="windowHeaderMusic" class="windowHeader"><p>Music Player</p><button id="closeBtnMusic" class="closeBtn">X</button><button disabled>☐</button><button disabled>_</button></div>
         </section>
 
         <section id="windowContact" class="draggable" style="display: none;">
-            <div id="windowHeaderContact" class="windowHeader"><p>About Me</p><button class="closeBtn" id="closeBtnContact">X</button><button disabled>☐</button><button disabled>_</button></div>
-                </div>
-                <h1>hi im molly :]</h1>
-                <p>INSRET INFO HEEERRRReEEEE
-                    <br>
-                HERREEEEEE
-                </p>
-            </section>
+            <div id="windowHeaderContact" class="windowHeader"><p>Contact</p><button id="closeBtnContact" class="closeBtn">X</button><button disabled>☐</button><button disabled>_</button></div>
+                <div class="contents">
+                    <p>
+                        <a href="mailto:mollyb@example.com"><span class="fas fa-envelope"></span>mollyb@example.com</a><br><a href="https://github.com/ceubic"><img src="media/githublogo.png" alt="Github">github.com/ceubic</a></a><br><a href="https://www.linkedin.com/"><img src="media/linkedinlogo.png" alt="Linkedin">Linkedin.com/in/molly-breiddal</a>
+                    </p>
+            </div>
+        </section>
 
 
         <nav id="desktop">
+
             <a href="#" class="desktop-icon">
                 <img src="media/bin.png" alt="Bin icon">
                 <span>Recycle Bin</span>
             </a>
+
             <a href="#" id="infoIcon" class="desktop-icon">
                 <img src="media/info.png" alt="info icon">
                 <span>About Me</span>
             </a>
+
             <a href="#" class="desktop-icon">
                 <img src="media/globe.png" alt="globe icon">
                 <span>Country Site</span>
             </a>
+
             <a href="#" class="desktop-icon">
                 <img src="media/folder.png" alt="folder icon">
                 <span>Wordpress Site</span>
             </a>
+
             <a href="#" class="desktop-icon">
                 <img src="media/moviemaker.png" alt="film icon">
                 <span>Movie DB</span>
-            </a>            
+            </a>   
+            
             <a href="#" class="desktop-icon">
                 <img src="media/calculator.png" alt="calculator icon">
                 <span>Shopify</span>
             </a>
+
             <a href="#" class="desktop-icon">
                 <img src="media/game-controller.png" alt="game icon">
                 <span>JS Game</span>
             </a>
-            <a href="#" id="musicPlayerIcon" class="desktop-icon">
-                <img src="media/player.png" alt="music player icon">
-                <span>Music Player</span>
-            </a>
-            <!--use light box workaround in third window?-->
-            <a href="#" id="imageFolderIcon" class="desktop-icon">
-                <img src="media/imgfolder.png" alt="image folder icon">
-                <span>Gallery</span>
-            </a>
-                        <a href="#" id="phoneIcon" class="desktop-icon">
+
+            <a href="#" id="phoneIcon" class="desktop-icon">
                 <img src="media/phone.png" alt="phone icon">
                 <span>Contact</span>
             </a>
 
         </nav>
     
-    <footer class="taskbar"><div id="clock"></div></footer>
+    <footer class="taskbar"><p>&#169;2023 Molly Breiddal.</p><div id="clock"></div></footer>
 
 <script src="scripts/script.js"></script> 
 </body>

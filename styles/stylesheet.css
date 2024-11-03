@@ -7,16 +7,18 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5rem;
 }
 
-#windowInfo, #windowContact, #windowGallery {
+#windowInfo {
     position: absolute;
-    top:10%;
+    top: 10%;
     left: 5%;
     z-index: 10;
     background-color: #ECE9D8;
     width: 35rem;
-    height: 70vh;
+    height: 38rem;
     max-width: 90%;
     box-shadow: inset -1px -1px #00138c,inset 1px 1px #0831d9,inset -2px -2px #001ea0,inset 2px 2px #166aee,inset -3px -3px #003bda,inset 3px 3px #0855dd;
     border-top-left-radius: 8px;
@@ -24,19 +26,43 @@ body {
     padding: 0 0 3px;
 }
 
-#windowMusic {
+#windowContact {
     position: absolute;
-    top:10%;
+    top: 10%;
     left: 5%;
-    z-index: 10;
+    z-index: 11;
     background-color: #ECE9D8;
-    width: 35rem;
-    height: 20vh;
+    width: 20rem;
+    height: 14rem;
     max-width: 90%;
     box-shadow: inset -1px -1px #00138c,inset 1px 1px #0831d9,inset -2px -2px #001ea0,inset 2px 2px #166aee,inset -3px -3px #003bda,inset 3px 3px #0855dd;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     padding: 0 0 3px;
+}
+
+
+#windowContact img, .fa-envelope {
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    margin: 8px;
+}
+
+
+@media only screen and (min-width: 600px) {
+    #windowInfo {
+        width: 25rem;
+        height: 32rem;
+        top: 15%;
+        left: 25%;
+    }
+
+    #windowContact {
+        top: 20%;
+        left: 27%;
+        height: 12.5rem
+    }
 }
 
 .windowHeader {
@@ -62,6 +88,30 @@ body {
     margin-left: .2rem;
 }
 
+#windowInfo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: 10% 0;
+    border: inset 5px #c8c6b7;
+}
+
+.contents {
+    margin: 4px 4px 4px 4px;
+}
+
+.contents p {
+    margin: 4px 4px 4px 4px;
+    padding: 10px 15px 10px 15px;
+    background-color: #fff;
+    border: inset 1px #c8c6b7;
+    font-size: 1rem;
+}
+
 .windowHeader button {
     display: flex;
     float: right;
@@ -71,7 +121,6 @@ body {
     padding: 0 0 0 3px;
     width: 1.4rem;
     height: 1.4rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: rgb(154,183,250);
     background: linear-gradient(142deg, rgba(154,183,250,1) 0%, rgba(11,104,247,1) 57%); 
     color: white;
@@ -82,7 +131,6 @@ body {
 
 .windowHeader .closeBtn {
     background: linear-gradient(142deg, rgba(241,172,154,1) 0%, rgba(232,68,11,1) 57%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
     padding: 0 0 0 4.5px;
     border: 1.5px solid white;
@@ -103,12 +151,10 @@ body {
     background: linear-gradient(142deg, rgba(0,42,98,1) 0%, rgba(0,84,185,1) 20%); 
 }
 
-/*active pseudo class not working in firefox???? for some reason?????? FML */
+/*active pseudo class doesnt want to work here in firefox???? for some reason?????? FML */
 .windowHeader .closeBtn:active  {
     background: linear-gradient(142deg, rgba(105,34,15,1) 0%, rgba(202,72,33,1) 20%) ;
 }
-
-/* not sure if this is correct semantically, but when i #windowHeader____ from these the styling breaks. why? who knows... */
 
 .desktop-icon {
     display: inline-block;
@@ -129,7 +175,6 @@ body {
 .desktop-icon span {
     display: block;
     font-size: 12px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
     text-shadow: 1px .5px 1px rgba(0, 0, 0, 0.6),
     1px .5px 2px rgba(0, 0, 0, 0.7);
@@ -166,6 +211,14 @@ body {
     height: 1.8rem;
 }
 
+.taskbar p {
+    margin: 5px;
+    color: #fff;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: .5rem;
+    text-shadow: none;
+}
+
 .taskbar button {
     margin-right: auto;
 }
@@ -175,91 +228,5 @@ body {
     margin-right: 0.5rem;
     font-size: 1rem;
     color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-shadow: 1px 1px #0f1089;
-}
-
-#musicplayer {
-    width: 95%;
-    margin: 0 auto; /* Center align */
-    background-color: #ECE9D8;
-    padding-top: 10px;
-    border: none;
-}
-
-.songtitle {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-    padding: 5px;
-    border: 3px inset #dbdaca;
-    background-color: #fff;
-    display: block;
-}
-
-.seeking {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box; /* Ensure it fits well */
-    padding: 5px; /* Add padding */
-}
-
-.seek_slider {
-    -webkit-appearance: none;
-    width: 90%;
-    height: 5px;
-    border: #cbcbc3 inset 1.5px;
-    background: #c6c4b8;
-}
-
-.seek_slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 10px;
-    height: 20px;
-    border-radius: 2px;
-    background: #fff;
-    border: 2.5px outset #c4c3b5;
-    cursor: pointer;
-}
-
-.seek_slider::-moz-range-thumb {
-    width: 10px;
-    height: 20px;
-    border-radius: 2px;
-    background: #fff;
-    border: 2.5px outset #c4c3b5;
-    cursor: pointer;
-}
-
-
-.current-time, .total-duration {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 12px;
-    color: #000000;
-    margin: 4px;
-}
-
-.fas {
-    color: #595952;
-    cursor: pointer;
-}
-
-.fas.fa-backward, .fas.fa-forward, .fas.fa-play, .fas.fa-pause {
-    font-size: 20px;
-}
-
-.controls div {
-    padding: 10px 0 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.controls {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin: px 0;
 }
